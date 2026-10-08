@@ -1,0 +1,18 @@
+{
+  "name": "tmpl-slidev-lectures",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "slides": "node .slidev/run.mjs lectures/slides.md",
+    "slides:build": "node .slidev/run.mjs build lectures/slides.md --out ../dist",
+    "slides:deck": "node .slidev/run.mjs",
+    "slides:demo": "node .slidev/run.mjs lectures/00-demo/slides.md"
+  },
+  "devDependencies": {
+    "@slidev/cli": "53.0.0",
+    "@slidev/theme-default": "0.25.0"
+  }
+}
