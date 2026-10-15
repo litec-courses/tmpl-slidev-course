@@ -1,4 +1,5 @@
 :root {
+  font-size: 100%;
   color: #17212b;
   background: #f4f7fa;
   font-family: Inter, system-ui, sans-serif;
@@ -44,6 +45,8 @@ h1, h2 { line-height: 1.15; }
 }
 
 .course { padding: 1.5rem; margin-bottom: 2.5rem; }
+
+.course h2 { margin-top: 0; }
 
 .units {
   display: grid;
