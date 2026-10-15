@@ -1,11 +1,7 @@
-# Gemeinsames Aussehen der Folien
+# Shared Slide Styling
 
-Dieser Ordner enthält die gemeinsamen Einstellungen für Slidev: Layouts, Farben,
-Schriften, Schullogo und Seitenzahlen. Sie werden beim Start über die
-Repository-Befehle automatisch geladen.
+This directory contains the shared Slidev configuration, including layouts, colors, fonts, the school logo, page numbering, publishing styles, and export settings. Repository scripts load these files automatically.
 
-**Zum Schreiben oder Präsentieren von Folien muss hier nichts verändert werden.
-Du kannst diesen Ordner ignorieren – bitte nicht löschen.**
+No changes in this directory are required when creating or presenting slides. The directory is part of the project infrastructure and must not be removed.
 
-Bearbeite die Markdown-Dateien unter [`lectures/`](../lectures/).
-Die kurze Installations- und Startanleitung steht in [`SLIDEV.md`](../SLIDEV.md).
+Slide content is maintained in [`lectures/`](../lectures/). Installation and usage instructions are available in [`SLIDEV.md`](../SLIDEV.md).

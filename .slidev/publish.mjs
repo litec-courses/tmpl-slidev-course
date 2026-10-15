@@ -146,7 +146,7 @@ async function main() {
 
   const browser = await chromium.launch({ headless: true });
   try {
-    const css = await readFile(path.join(root, '.slidev/handout.css'), 'utf8');
+    const css = await readFile(path.join(root, '.slidev/styles/handout.css'), 'utf8');
     for (const unit of config.units)
       await exportHandout(browser, unit, css);
   }
@@ -154,7 +154,7 @@ async function main() {
     await browser.close();
   }
 
-  await cp(path.join(root, 'pages/styles.css'), path.join(dist, 'styles.css'));
+  await cp(path.join(root, '.slidev/styles/pages.css'), path.join(dist, 'styles.css'));
   await mkdir(path.join(dist, 'assets'), { recursive: true });
   await cp(path.join(root, '.slidev/public/litec-icon.png'), path.join(dist, 'assets/litec-icon.png'));
   await writeFile(path.join(dist, 'index.html'), renderIndex(config));

@@ -38,6 +38,8 @@ Slides contain concepts, questions, diagrams, and short examples. Handouts conta
 - Use Vue only for navigation or instructional reveals.
 - Do not manually wrap prose.
 - Keep shared design in `.slidev/`.
+- Set an explicit root font size for screen styles and use `rem` or `em` for typography and spacing. Pixel units are acceptable for one-pixel borders.
+- Use print-appropriate physical units such as `mm` for page geometry and `pt` for typography in print-only styles.
 
 ## Publishing
 
@@ -54,4 +56,5 @@ Slides contain concepts, questions, diagrams, and short examples. Handouts conta
 - Report checks that were not run.
 - Preserve existing changes and stage only files changed for the current task.
 - Ask for approval before committing, pushing, or publishing.
+- Use Conventional Commits for every commit message, for example `feat: add course downloads`, `fix: correct export paths`, or `chore: update dependencies`.
 - Do not use subagents unless explicitly requested.

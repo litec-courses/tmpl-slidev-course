@@ -28,7 +28,7 @@ bun install --frozen-lockfile
 bun run slides
 ```
 
-[Slidev-Anleitung](SLIDEV.md) · [Regeln für Coding-Agents](AGENTS.md)
+[Slidev-Anleitung](SLIDEV.md) · [Technische Details](details.md) · [Regeln für Coding-Agents](AGENTS.md)
 
 ## Struktur
 
