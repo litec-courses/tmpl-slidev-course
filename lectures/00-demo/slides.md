@@ -69,11 +69,11 @@ Die linke Spalte beginnt direkt nach dem Frontmatter.
 layout: two-cols
 ---
 
-Linke Spalte
+Left column
 
 ::right::
 
-Rechte Spalte
+Right column
 ```
 
 ---
@@ -166,7 +166,7 @@ Speaker Notes stehen als HTML-Kommentar unter dem Folieninhalt.
 
 ```md
 <!--
-Diese Notiz sieht nur die präsentierende Person.
+Only the presenter can see this note.
 -->
 ```
 

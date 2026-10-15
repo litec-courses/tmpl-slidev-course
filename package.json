@@ -9,10 +9,15 @@
     "slides": "node .slidev/run.mjs lectures/slides.md",
     "slides:build": "node .slidev/run.mjs build lectures/slides.md --out ../dist",
     "slides:deck": "node .slidev/run.mjs",
-    "slides:demo": "node .slidev/run.mjs lectures/00-demo/slides.md"
+    "slides:demo": "node .slidev/run.mjs lectures/00-demo/slides.md",
+    "pages:build": "node .slidev/publish.mjs",
+    "pages:preview": "bunx vite preview --outDir dist"
   },
   "devDependencies": {
     "@slidev/cli": "53.0.0",
-    "@slidev/theme-default": "0.25.0"
+    "@slidev/theme-default": "0.25.0",
+    "markdown-it": "14.3.2",
+    "playwright-chromium": "1.64.1",
+    "yaml": "2.9.1"
   }
 }

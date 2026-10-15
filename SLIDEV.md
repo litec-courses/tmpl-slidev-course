@@ -34,6 +34,15 @@ Einzelnes Deck bauen:
 bun run slides:deck build lectures/01-beispiel-slides.md --out ../dist/beispiel
 ```
 
+GitHub-Pages-Ausgabe lokal bauen und prüfen:
+
+```bash
+bun run pages:build
+bun run pages:preview
+```
+
+`lectures/publish.yml` ist die Freigabeliste für die Kursseite. Nur dort eingetragene Decks und Begleitblätter werden veröffentlicht. Der Pages-Build erzeugt interaktive Slidev-Decks, PDF-Downloads der Folien sowie Begleitblätter als Markdown und PDF in `dist/`.
+
 ## Neue Einheit
 
 1. Beispieldeck und Begleitblatt kopieren.

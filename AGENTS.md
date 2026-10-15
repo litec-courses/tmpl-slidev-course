@@ -1,53 +1,57 @@
-# Arbeitsregeln
+# Working Rules
 
-## Inhalte
+## Content
 
-- Fach, Zielgruppe, Voraussetzungen und Lehrplan stehen in `README.md`.
-- Texte und Aufgaben sind auf Deutsch. IT-Begriffe, Identifier und APIs bleiben Englisch.
-- Neue Begriffe beim ersten Auftreten erklären.
-- Versionsabhängige Aussagen mit offiziellen Quellen prüfen.
-- Codebeispiele klein und ausführbar halten.
+- Define the subject, target audience, prerequisites, and curriculum in `README.md`.
+- Write teaching text and exercises in German. Keep IT terms and APIs in English.
+- Write all code examples in English, including variable, function, method, class, property, parameter, and example-data names.
+- Explain new terms when they first appear.
+- Verify version-dependent statements against official sources.
+- Keep code examples small and executable.
 
-## Einheiten
+## Units
 
-Jede Einheit enthält:
+Each unit contains:
 
-- Lernziele und Zeitbudget
-- angeleitete und selbstständige Praxis
-- überprüfbares Ergebnis
-- Hilfestellung und Zusatzaufgabe
+- learning objectives and a time budget
+- guided and independent practice
+- a verifiable outcome
+- guidance and an extension task
 
-Folien enthalten Konzepte, Fragen, Diagramme und kurze Beispiele. Begleitblätter enthalten Arbeitsauftrag, nötigen Startcode, Erfolgskriterien, Hilfekarte, Zusatzaufgabe und Quellen. Inhalte nicht unnötig doppeln.
+Slides contain concepts, questions, diagrams, and short examples. Handouts contain the assignment, required starter code, success criteria, a help card, an extension task, and sources. Avoid unnecessary duplication.
 
-## Dateien
+## Files
 
-- Folien: `lectures/NN-thema-slides.md`
-- Begleitblatt: `lectures/NN-thema-begleitblatt.md`
-- Kursdeck: `lectures/slides.md`
-- Kapitelanfänge: eindeutiger `routeAlias`
-- Kursübersicht: interne `<Link>`-Sprünge
-- Kursbezeichnung: `themeConfig.courseLabel`
+- Slides: `lectures/NN-topic-slides.md`
+- Handout: `lectures/NN-topic-begleitblatt.md`
+- Course deck: `lectures/slides.md`
+- Exams and related solutions: `exams/`
+- Chapter starts: unique `routeAlias`
+- Course overview: internal `<Link>` navigation
+- Course label: `themeConfig.courseLabel`
 
-## Gestaltung
+## Design
 
-- Markdown bevorzugen.
+- Prefer Markdown.
 - Layouts: `default`, `cover`, `section`, `exercise`, `two-cols`.
-- Kein Inline-CSS oder dekoratives HTML.
-- Vue nur für Navigation oder didaktische Einblendungen.
-- Fließtext nicht manuell umbrechen.
-- Zentrale Gestaltung in `.slidev/` belassen.
+- Do not use inline CSS or decorative HTML.
+- Use Vue only for navigation or instructional reveals.
+- Do not manually wrap prose.
+- Keep shared design in `.slidev/`.
 
-## Veröffentlichung
+## Publishing
 
-- Lösungen, Prüfungen und `_temp/` nicht einbinden.
-- Speaker Notes und Builds als öffentlich behandeln.
-- Decks nur ausdrücklich in `lectures/slides.md` aufnehmen.
+- Do not include solutions, exams, or `_temp/`.
+- Never add files from `exams/` to `lectures/slides.md` or `lectures/publish.yml`.
+- Treat speaker notes and builds as public.
+- Add decks to `lectures/slides.md` only when explicitly requested.
+- Add downloadable material to `lectures/publish.yml` only when explicitly requested.
 
-## Prüfung und Git
+## Verification and Git
 
-- Theme-Änderung: Kurs und Demo bauen, danach im Browser prüfen.
-- Inhaltsänderung: betroffenes Deck prüfen.
-- Nicht ausgeführte Prüfungen nennen.
-- Bestehende Änderungen erhalten und nur eigene Dateien stagen.
-- Vor Commit, Push oder Veröffentlichung Zustimmung einholen.
-- Keine Subagents ohne Auftrag.
+- For theme changes, build the course and demo, then verify them in a browser.
+- For content changes, verify the affected deck.
+- Report checks that were not run.
+- Preserve existing changes and stage only files changed for the current task.
+- Ask for approval before committing, pushing, or publishing.
+- Do not use subagents unless explicitly requested.

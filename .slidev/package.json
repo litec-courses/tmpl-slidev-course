@@ -15,7 +15,7 @@
       },
       "themeConfig": {
         "primary": "#01315c",
-        "courseLabel": "Unterricht"
+        "courseLabel": "Course"
       },
       "drawings": {
         "persist": false
