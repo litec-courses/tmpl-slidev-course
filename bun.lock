@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "tmpl-slidev-lectures",
+      "name": "tmpl-slidev-courses",
       "devDependencies": {
         "@slidev/cli": "53.0.0",
         "@slidev/theme-default": "0.25.0",
