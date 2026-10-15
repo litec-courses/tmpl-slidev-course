@@ -8,6 +8,7 @@
       "canvasWidth": 980,
       "colorSchema": "light",
       "transition": "fade",
+      "favicon": "./litec-icon.png",
       "fonts": {
         "provider": "none",
         "sans": "Inter",

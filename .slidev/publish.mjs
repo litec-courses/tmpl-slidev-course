@@ -66,6 +66,7 @@ async function buildDeck(source, slug, pdfName) {
   const deckOut = path.join(dist, 'slides', slug);
   const deckBase = publicUrl(`slides/${slug}/`);
   await runSlidev(['build', source, '--out', deckOut, '--base', deckBase, '--without-notes']);
+  await cp(path.join(root, '.slidev/public/litec-icon.png'), path.join(deckOut, 'litec-icon.png'));
   await runSlidev(['export', source, '--output', path.join(dist, 'downloads', pdfName), '--with-toc']);
 }
 
@@ -107,6 +108,7 @@ function renderIndex(config) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(config.course.title)}</title>
+  <link rel="icon" type="image/png" href="${publicUrl('assets/litec-icon.png')}">
   <link rel="stylesheet" href="${publicUrl('styles.css')}">
 </head>
 <body>
