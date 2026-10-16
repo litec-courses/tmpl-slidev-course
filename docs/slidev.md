@@ -79,7 +79,7 @@ Die Scripts laden das lokale Theme automatisch.
 - rechte Spalte: `::right::`
 - Hinweise: Blockquotes
 - Einblendungen: `v-click`, `v-clicks`
-- Notizen: HTML-Kommentare; keine vertraulichen Inhalte
+- Notizen: HTML-Kommentare; der Pages-Build schließt sie aus
 - Tasten: Pfeile, `O` für Übersicht, `P` für Presenter Mode
 
 ## Prüfung
