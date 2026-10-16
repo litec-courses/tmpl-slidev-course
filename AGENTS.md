@@ -40,6 +40,7 @@ Slides contain concepts, questions, diagrams, and short examples. Handouts conta
 - Keep shared design in `.slidev/`.
 - Set an explicit root font size for screen styles and use `rem` or `em` for typography and spacing. Pixel units are acceptable for one-pixel borders.
 - Use print-appropriate physical units such as `mm` for page geometry and `pt` for typography in print-only styles.
+- Use GitHub-style alerts such as `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, and `CAUTION` when they make documentation easier to scan.
 
 ## Publishing
 

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "typora.typora-open-in-typora",
+    "bierner.github-markdown-preview",
+    "antfu.slidev",
+    "DavidAnson.vscode-markdownlint",
+    "redhat.vscode-yaml",
+    "oven.bun-vscode"
+  ]
+}
