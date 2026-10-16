@@ -1,6 +1,6 @@
 # Slidev Lectures Template
 
-Vorlage für Unterrichtsfolien und Begleitblätter im LITEC-Design.
+Vorlage für Unterrichtsfolien und Begleitblätter im LiTec-Design.
 
 ## Kurs
 
@@ -57,3 +57,9 @@ bun run pages:preview
 ```
 
 Im Kursrepository unter **Settings → Pages → Build and deployment** als Quelle **GitHub Actions** auswählen. Lösungen, Prüfungen und `_temp/` nicht in `lectures/publish.yml` aufnehmen.
+
+## Lizenz
+
+Eigener Quellcode und eigene Template-Inhalte stehen unter der [MIT-Lizenz](LICENSE), sofern nicht anders angegeben.
+
+Die eingebetteten Fonts behalten ihre OFL-Lizenzen. Name, Logos und Branding von LiTec sind nicht Teil der MIT-Lizenz.

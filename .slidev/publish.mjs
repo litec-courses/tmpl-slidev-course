@@ -113,7 +113,7 @@ function renderIndex(config) {
 </head>
 <body>
   <header>
-    <img src="${publicUrl('assets/litec-icon.png')}" alt="LITEC">
+    <img src="${publicUrl('assets/litec-icon.png')}" alt="LiTec">
     <div>
       <h1>${escapeHtml(config.course.title)}</h1>
       <p>${escapeHtml(config.course.description || '')}</p>

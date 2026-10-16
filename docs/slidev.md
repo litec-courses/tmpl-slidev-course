@@ -92,7 +92,7 @@ Die Scripts laden das lokale Theme automatisch.
 ## Herkunft
 
 - Basis: `MEDT3-lectures`
-- Branding: [LITEC](https://www.litec.ac.at/)
+- Branding: [LiTec](https://www.litec.ac.at/)
 - Farben: `#01315c`, `#cc7575`
 - Fonts: Inter und JetBrains Mono mit OFL-Lizenzen
 

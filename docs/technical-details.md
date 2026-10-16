@@ -61,7 +61,7 @@ Der Pages-Build kann als erforderlicher Pull-Request-Check dienen. Deployments b
 
 ## TODO
 
-- [ ] Repository `litec-slidev` mit versioniertem Package und Pages-Workflow erstellen.
+- [ ] Repository `course-tooling` mit versioniertem Package und Pages-Workflow ausbauen.
 - [ ] Template auf feste Package- und Workflow-Versionen umstellen und mit einem Testkurs prüfen.
 - [ ] Wiederverwendbare Exam-Beispiele aus bestehenden Prüfungen erstellen.
 - [ ] Infrastruktur in alte Repositories übernehmen.
