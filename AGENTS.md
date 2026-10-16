@@ -46,7 +46,7 @@ Slides contain concepts, questions, diagrams, and short examples. Handouts conta
 
 - Do not include solutions, exams, or `_temp/`.
 - Never add files from `exams/` to `lectures/slides.md` or `lectures/publish.yml`.
-- Treat speaker notes and builds as public.
+- Treat published builds as public. Keep speaker notes out of Pages builds with `--without-notes`.
 - Add decks to `lectures/slides.md` only when explicitly requested.
 - Add downloadable material to `lectures/publish.yml` only when explicitly requested.
 

@@ -60,10 +60,15 @@ Aktivieren:
 
 Keine breite Admin-Bypass-Regel setzen. Notfallzugang auf ein kleines Owner-Team begrenzen. Nutzung dokumentieren.
 
-> [!IMPORTANT]
-> **Require linear history** braucht **Allow squash merging** oder **Allow rebase merging**. Repository: **Settings → General**, Abschnitt **Pull Requests**. Empfohlen ist Squash Merge.
+Unter **Require a pull request before merging → Additional settings** bei **Allowed merge methods** nur **Squash** wählen. Das passt zu **Require linear history**.
 
-Nach dem ersten erfolgreichen Pull Request **Require status checks to pass before merging** aktivieren. Den Check `build` auswählen.
+**Require status checks to pass** aktivieren:
+
+- Unter **Add checks** den Jobnamen `build` manuell eintragen.
+- **Require branches to be up to date before merging** zunächst deaktiviert lassen.
+- **Do not require status checks on creation** aktivieren.
+
+Organization Rulesets schlagen vorhandene Checks nicht automatisch vor.
 
 ## 3. Approval-Pflicht
 
@@ -99,6 +104,16 @@ Organization: **Settings → Custom properties → Set values**
 Vor einer Lockerung Grund, Person, Dauer und Rückstellung dokumentieren. Repository: Regeln unter `https://github.com/ORGANIZATION/REPOSITORY/rules` prüfen.
 
 Für einzelne Repositories das Profil ändern. Ein Ruleset nur für eine gemeinsame Pause deaktivieren.
+
+## In eine andere Organization übertragen
+
+1. Quelle: **Settings → Repository → Rulesets**.
+2. Ruleset öffnen und über `…` als JSON exportieren.
+3. Ziel: **Settings → Repository → Rulesets → New ruleset → Import a ruleset**.
+4. JSON prüfen und Ruleset erstellen.
+
+> [!IMPORTANT]
+> Zuerst `protection_profile` mit denselben Werten in der Ziel-Organization anlegen. Property-Werte, Repository-Einstellungen und organisationsspezifische Bypass-IDs werden nicht übertragen.
 
 ## Kontrolle
 

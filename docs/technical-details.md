@@ -33,7 +33,7 @@ docker run --rm -v "$PWD:/repo:ro" -w /repo rhysd/actionlint:latest -color .gith
 Der Befehl braucht Docker. Keine Ausgabe bedeutet: `actionlint` hat keine Probleme gefunden.
 
 > [!WARNING]
-> Speaker Notes und Builds sind öffentlich. Prüfungen, Lösungen und `_temp/` nie in `lectures/slides.md` oder `lectures/publish.yml` aufnehmen.
+> Pages-Builds sind öffentlich. `--without-notes` schließt Speaker Notes aus. Prüfungen, Lösungen und `_temp/` nie in `lectures/slides.md` oder `lectures/publish.yml` aufnehmen.
 
 ## GitHub Education
 
@@ -61,11 +61,12 @@ Der Pages-Build kann als erforderlicher Pull-Request-Check dienen. Deployments b
 
 ## TODO
 
-- [ ] Paket für Theme, Layouts und Publish-Scripts prüfen.
+- [ ] Repository `litec-slidev` mit versioniertem Package und Pages-Workflow erstellen.
+- [ ] Template auf feste Package- und Workflow-Versionen umstellen und mit einem Testkurs prüfen.
+- [ ] Wiederverwendbare Exam-Beispiele aus bestehenden Prüfungen erstellen.
 - [ ] Infrastruktur in alte Repositories übernehmen.
-- [ ] `protection_profile` und Rulesets einrichten.
-- [ ] Pages-Workflow für Pull Requests erweitern.
-- [ ] Build als erforderlichen Check eintragen.
-- [ ] Zentralen Workflow prüfen.
+- [x] `protection_profile` und Rulesets einrichten.
+- [x] Pages-Workflow für Pull Requests erweitern.
+- [x] Build als erforderlichen Check eintragen.
 - [ ] Prozess für Major-Updates festlegen.
 - [ ] Merge-Prozess für Dependabot festlegen.
