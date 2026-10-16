@@ -28,7 +28,7 @@ bun install --frozen-lockfile
 bun run slides
 ```
 
-[Slidev-Anleitung](docs/slidev.md) · [Technische Details](docs/technical-details.md) · [Organization-Infrastruktur](docs/infrastructure.md) · [Regeln für Coding-Agents](AGENTS.md)
+[Slidev-Anleitung](docs/slidev.md) · [Technische Details](docs/technical-details.md) · [Organization-Infrastruktur](https://github.com/litec-courses/course-tooling/blob/main/docs/github-organization.md) · [Regeln für Coding-Agents](AGENTS.md)
 
 ## Struktur
 

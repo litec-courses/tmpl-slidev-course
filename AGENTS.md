@@ -22,6 +22,8 @@ Slides contain concepts, questions, diagrams, and short examples. Handouts conta
 
 ## Files
 
+- Keep the repository root as small as practical. Place examples, documentation, scripts, and configuration in dedicated directories when supported by their tools.
+- Explain files that must remain in the repository root in `README.md`.
 - Slides: `lectures/NN-topic-slides.md`
 - Handout: `lectures/NN-topic-begleitblatt.md`
 - Course deck: `lectures/slides.md`

@@ -40,7 +40,7 @@ bun run pages:build                                 # Pages bauen
 bun run pages:preview                               # Pages prüfen
 ```
 
-`lectures/publish.yml` gibt Inhalte frei. Der Pages-Build erzeugt Decks, Folien-PDFs und Begleitblätter in `dist/`.
+`lectures/publish.yml` gibt Inhalte frei. Der Pages-Build erzeugt Decks und Folien-PDFs und kopiert Begleitblätter als Markdown nach `dist/`.
 
 ## Neue Einheit
 

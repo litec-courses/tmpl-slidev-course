@@ -2,15 +2,12 @@ import { spawn } from 'node:child_process';
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import MarkdownIt from 'markdown-it';
-import { chromium } from 'playwright-chromium';
 import YAML from 'yaml';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const configPath = path.join(root, 'lectures/publish.yml');
 const base = normalizeBase(process.env.PAGES_BASE || '/');
-const markdown = new MarkdownIt({ html: false, linkify: true, typographer: true });
 
 function normalizeBase(value) {
   return `/${value.split('/').filter(Boolean).join('/')}${value === '/' ? '' : '/'}`;
@@ -70,25 +67,6 @@ async function buildDeck(source, slug, pdfName) {
   await runSlidev(['export', source, '--output', path.join(dist, 'downloads', pdfName), '--with-toc']);
 }
 
-function withoutFrontmatter(source) {
-  return source.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
-}
-
-async function exportHandout(browser, unit, css) {
-  const handoutPath = path.join(root, unit.handout);
-  const source = withoutFrontmatter(await readFile(handoutPath, 'utf8'));
-  await cp(handoutPath, path.join(dist, 'downloads', `${unit.slug}-begleitblatt.md`));
-  const html = `<!doctype html><html lang="de"><head><meta charset="utf-8"><style>${css}</style></head><body>${markdown.render(source)}</body></html>`;
-  const page = await browser.newPage();
-  await page.setContent(html, { waitUntil: 'load' });
-  await page.pdf({
-    path: path.join(dist, 'downloads', `${unit.slug}-begleitblatt.pdf`),
-    format: 'A4',
-    printBackground: true,
-  });
-  await page.close();
-}
-
 function renderIndex(config) {
   const labels = config.labels;
   const units = config.units.map((unit) => `
@@ -98,7 +76,6 @@ function renderIndex(config) {
         <a class="button" href="${publicUrl(`slides/${unit.slug}/`)}">${escapeHtml(labels.openSlides)}</a>
         <a class="button secondary" href="${publicUrl(`downloads/${unit.slug}-folien.pdf`)}" download>${escapeHtml(labels.downloadSlides)}</a>
         <a class="button secondary" href="${publicUrl(`downloads/${unit.slug}-begleitblatt.md`)}" download>${escapeHtml(labels.downloadHandoutMarkdown)}</a>
-        <a class="button secondary" href="${publicUrl(`downloads/${unit.slug}-begleitblatt.pdf`)}" download>${escapeHtml(labels.downloadHandoutPdf)}</a>
       </div>
     </article>`).join('');
 
@@ -141,17 +118,9 @@ async function main() {
   await mkdir(path.join(dist, 'downloads'), { recursive: true });
 
   await buildDeck(config.course.slides, 'kurs', 'kurs-folien');
-  for (const unit of config.units)
+  for (const unit of config.units) {
     await buildDeck(unit.slides, unit.slug, `${unit.slug}-folien`);
-
-  const browser = await chromium.launch({ headless: true });
-  try {
-    const css = await readFile(path.join(root, '.slidev/styles/handout.css'), 'utf8');
-    for (const unit of config.units)
-      await exportHandout(browser, unit, css);
-  }
-  finally {
-    await browser.close();
+    await cp(path.join(root, unit.handout), path.join(dist, 'downloads', `${unit.slug}-begleitblatt.md`));
   }
 
   await cp(path.join(root, '.slidev/styles/pages.css'), path.join(dist, 'styles.css'));

@@ -10,7 +10,6 @@ labels:
   openSlides: Folien öffnen
   downloadSlides: Folien als PDF
   downloadHandoutMarkdown: Begleitblatt als Markdown
-  downloadHandoutPdf: Begleitblatt als PDF
   units: Unterrichtseinheiten
   footer: Erzeugt aus den freigegebenen Dateien in lectures/publish.yml.
 

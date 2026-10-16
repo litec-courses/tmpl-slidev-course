@@ -20,7 +20,7 @@ GitHub unterstützt den textbasierten `bun.lock`. Siehe [unterstützte Ökosyste
 
 `.github/workflows/pages.yml` läuft bei Pull Requests, bei Pushes auf `main` und manuell. Er installiert Bun und Chromium. Dann baut er die Freigaben aus `lectures/publish.yml`.
 
-Pull Requests bauen und prüfen nur. Pushes auf `main` und manuelle Läufe auf `main` veröffentlichen Decks, PDFs und Markdown-Dateien aus `dist/`.
+Pull Requests bauen und prüfen nur. Pushes auf `main` und manuelle Läufe auf `main` veröffentlichen Decks, Folien-PDFs und Begleitblätter als Markdown aus `dist/`.
 
 Repository: **Settings → Pages → Build and deployment → GitHub Actions**. Jekyll wird nicht verwendet. Siehe [GitHub Pages mit eigenem Workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
@@ -35,38 +35,8 @@ Der Befehl braucht Docker. Keine Ausgabe bedeutet: `actionlint` hat keine Proble
 > [!WARNING]
 > Pages-Builds sind öffentlich. `--without-notes` schließt Speaker Notes aus. Prüfungen, Lösungen und `_temp/` nie in `lectures/slides.md` oder `lectures/publish.yml` aufnehmen.
 
-## GitHub Education
-
-Verifizierte Lehrkräfte können eine Unterrichts-Organization auf GitHub Team umstellen:
-
-1. [Teacher Dashboard](https://education.github.com/globalcampus/teacher) öffnen.
-2. **Upgrade your academic organizations** wählen.
-3. **Upgrade to GitHub Team** wählen.
-
-Die Option liegt nicht unter Billing. Fehlt sie, [Education-Status](https://github.com/settings/education/benefits) und Owner-Rolle prüfen.
-
 ## Branch-Schutz
 
 Änderungen per Feature-Branch und Pull Request nach `main` bringen. Templates übertragen keine Repository-Einstellungen.
 
-Die Custom Property `protection_profile` schützt den Default Branch:
-
-- `off`: kein Organization Ruleset
-- `pull_request`: Pull Request ohne fremde Approval
-- `review_required`: Pull Request mit fremder Approval
-
-Einrichtung und Tests: [GitHub-Organization verwalten](infrastructure.md).
-
-Der Pages-Build kann als erforderlicher Pull-Request-Check dienen. Deployments bleiben auf `main` beschränkt.
-
-## TODO
-
-- [ ] Repository `course-tooling` mit versioniertem Package und Pages-Workflow ausbauen.
-- [ ] Template auf feste Package- und Workflow-Versionen umstellen und mit einem Testkurs prüfen.
-- [ ] Wiederverwendbare Exam-Beispiele aus bestehenden Prüfungen erstellen.
-- [ ] Infrastruktur in alte Repositories übernehmen.
-- [x] `protection_profile` und Rulesets einrichten.
-- [x] Pages-Workflow für Pull Requests erweitern.
-- [x] Build als erforderlichen Check eintragen.
-- [ ] Prozess für Major-Updates festlegen.
-- [ ] Merge-Prozess für Dependabot festlegen.
+Der Pages-Build kann als erforderlicher Pull-Request-Check dienen. Deployments bleiben auf `main` beschränkt. Die gemeinsame Einrichtung ist im Repository [`course-tooling`](https://github.com/litec-courses/course-tooling/blob/main/docs/github-organization.md) dokumentiert.
