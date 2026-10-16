@@ -13,5 +13,5 @@ permissions:
   id-token: write
 
 jobs:
-  pages:
+  ci:
     uses: litec-courses/course-tooling/.github/workflows/publish-pages.yml@v0.1.0
