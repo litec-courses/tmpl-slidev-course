@@ -1,4 +1,5 @@
 ---
+theme: slidev-theme-litec
 title: Slidev – Überblick und Beispiele
 author: hasp, ai
 handout: false
@@ -184,7 +185,7 @@ Diese Notiz demonstriert den Presenter Mode und erscheint nicht auf der Folie.
 - <kbd>O</kbd> zeigt alle Folien als Übersicht.
 - Der PDF-Export übernimmt das Aussehen der Folien.
 - Logo, Farben, Fonts, Seitenzahlen und Abstände gelten zentral für alle Decks.
-- Gemeinsame Einstellungen liegen in `.slidev/` und müssen beim Schreiben nicht
+- Gemeinsame Einstellungen kommen aus `slidev-theme-litec` und müssen beim Schreiben nicht
   verändert werden.
 
 > Neue Foliensätze brauchen hauptsächlich Markdown und wenige Layout-Angaben.

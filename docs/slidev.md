@@ -58,21 +58,19 @@ themeConfig:
   courseLabel: SYT3 · Docker
 ```
 
-Auch einzelne Decks brauchen den Wert. Der Standard steht in `.slidev/package.json`.
+Auch einzelne Decks brauchen den Wert. Der Standard kommt aus dem fest gepinnten Theme-Paket.
 
 ## Theme
 
-Die Scripts laden das lokale Theme automatisch.
+Jedes Deck wählt das gemeinsame, fest versionierte Theme im ersten Frontmatter:
 
-| Datei | Zweck |
-| --- | --- |
-| `.slidev/package.json` | Format, Fonts, Farben, Kursbezeichnung |
-| `.slidev/styles/index.css` | Typografie und Abstände |
-| `.slidev/global-top.vue` | Logo |
-| `.slidev/global-bottom.vue` | Kursbezeichnung und Seitenzahlen |
-| `.slidev/layouts/` | Layouts |
-| `.slidev/setup/mermaid.ts` | Mermaid-Design |
-| `.slidev/public/` | Logos und Fonts |
+```yaml
+---
+theme: slidev-theme-litec
+---
+```
+
+`package.json` pinnt das Theme auf einen unveränderlichen Git-Tag. Format und Kursbezeichnung lassen sich pro Deck im Frontmatter überschreiben; ein Fork des Themes ist dafür nicht erforderlich.
 
 - Format: 3:2 (`3/2`), Canvasbreite 980
 - Layouts: `default`, `cover`, `section`, `exercise`, `two-cols`

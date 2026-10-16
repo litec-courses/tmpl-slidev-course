@@ -38,7 +38,7 @@ bun run slides
 - `lectures/00-demo/`: Slidev-Demo
 - `exams/`: nicht veröffentlichte Prüfungsunterlagen und Lösungen
 - `docs/`: Anleitungen zu Slidev, technischen Details und der GitHub-Organization
-- `.slidev/`: Theme, Layouts, Branding und Fonts
+- `package.json`: fest gepinnte Version des gemeinsamen Themes und Publishers
 
 ## Als Template verwenden
 
@@ -49,7 +49,7 @@ bun run slides
 
 ## Veröffentlichung mit GitHub Pages
 
-Die in `lectures/publish.yml` ausdrücklich freigegebenen Folien und Begleitblätter werden bei einem Push auf `main` veröffentlicht. Die erzeugte Kursseite enthält interaktive Folien, PDF-Downloads der Folien sowie Begleitblätter als Markdown und PDF.
+Die in `lectures/publish.yml` ausdrücklich freigegebenen Folien und Begleitblätter werden bei einem Push auf `main` veröffentlicht. Die erzeugte Kursseite enthält interaktive Folien, PDF-Downloads der Folien sowie Begleitblätter als Markdown.
 
 ```bash
 bun run pages:build
@@ -58,8 +58,10 @@ bun run pages:preview
 
 Im Kursrepository unter **Settings → Pages → Build and deployment** als Quelle **GitHub Actions** auswählen. Lösungen, Prüfungen und `_temp/` nicht in `lectures/publish.yml` aufnehmen.
 
+Theme, Publisher und wiederverwendbarer Pages-Workflow sind unveränderlich auf [`course-tooling@v0.1.0`](https://github.com/litec-courses/course-tooling/tree/v0.1.0) gepinnt.
+
 ## Lizenz
 
 Eigener Quellcode und eigene Template-Inhalte stehen unter der [MIT-Lizenz](LICENSE), sofern nicht anders angegeben.
 
-Die eingebetteten Fonts behalten ihre OFL-Lizenzen. Name, Logos und Branding von LiTec sind nicht Teil der MIT-Lizenz.
+Die vom gemeinsamen Theme eingebetteten Fonts behalten ihre OFL-Lizenzen. Name, Logos und Branding von LiTec sind nicht Teil der MIT-Lizenz.

@@ -9,57 +9,9 @@ on:
 
 permissions:
   contents: read
-
-concurrency:
-  group: pages-${{ github.event_name == 'pull_request' && github.ref || 'deployment' }}
-  cancel-in-progress: false
+  pages: write
+  id-token: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v7
-
-      - name: Set up Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: 1.4.2
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
-
-      - name: Install Chromium system dependencies
-        run: bunx playwright install --with-deps chromium
-
-      - name: Build Pages site
-        env:
-          PAGES_BASE: /${{ github.event.repository.name }}/
-        run: bun run pages:build
-
-      - name: Configure GitHub Pages
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: actions/configure-pages@v6
-        with:
-          enablement: true
-
-      - name: Upload Pages artifact
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: dist
-
-  deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+  pages:
+    uses: litec-courses/course-tooling/.github/workflows/publish-pages.yml@v0.1.0

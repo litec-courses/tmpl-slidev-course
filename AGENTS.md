@@ -39,7 +39,7 @@ Slides contain concepts, questions, diagrams, and short examples. Handouts conta
 - Do not use inline CSS or decorative HTML.
 - Use Vue only for navigation or instructional reveals.
 - Do not manually wrap prose.
-- Keep shared design in `.slidev/`.
+- Keep shared design in the pinned `slidev-theme-litec` package. Put course-specific overrides in slide headmatter or dedicated local files only when necessary.
 - Set an explicit root font size for screen styles and use `rem` or `em` for typography and spacing. Pixel units are acceptable for one-pixel borders.
 - Use print-appropriate physical units such as `mm` for page geometry and `pt` for typography in print-only styles.
 - Use GitHub-style alerts such as `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, and `CAUTION` when they make documentation easier to scan.

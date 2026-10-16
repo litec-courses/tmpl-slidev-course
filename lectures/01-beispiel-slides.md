@@ -1,4 +1,5 @@
 ---
+theme: slidev-theme-litec
 title: Beispieleinheit
 author: Lehrperson
 layout: cover

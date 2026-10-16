@@ -18,7 +18,7 @@ GitHub unterstützt den textbasierten `bun.lock`. Siehe [unterstützte Ökosyste
 
 ## GitHub Pages
 
-`.github/workflows/pages.yml` läuft bei Pull Requests, bei Pushes auf `main` und manuell. Er installiert Bun und Chromium. Dann baut er die Freigaben aus `lectures/publish.yml`.
+`.github/workflows/pages.yml` ruft den fest auf `v0.1.0` gepinnten Workflow aus [`course-tooling`](https://github.com/litec-courses/course-tooling) auf. Er läuft bei Pull Requests, bei Pushes auf `main` und manuell, installiert Bun und Chromium und baut die Freigaben aus `lectures/publish.yml`.
 
 Pull Requests bauen und prüfen nur. Pushes auf `main` und manuelle Läufe auf `main` veröffentlichen Decks, Folien-PDFs und Begleitblätter als Markdown aus `dist/`.
 
@@ -39,4 +39,4 @@ Der Befehl braucht Docker. Keine Ausgabe bedeutet: `actionlint` hat keine Proble
 
 Änderungen per Feature-Branch und Pull Request nach `main` bringen. Templates übertragen keine Repository-Einstellungen.
 
-Der Pages-Build kann als erforderlicher Pull-Request-Check dienen. Deployments bleiben auf `main` beschränkt. Die gemeinsame Einrichtung ist im Repository [`course-tooling`](https://github.com/litec-courses/course-tooling/blob/main/docs/github-organization.md) dokumentiert.
+Der Pages-Build kann als erforderlicher Pull-Request-Check dienen. Deployments bleiben auf `main` beschränkt. Die gemeinsame Einrichtung ist im Repository [`course-tooling`](https://github.com/litec-courses/course-tooling/blob/main/docs/github-organization.md) dokumentiert. Theme und Workflow werden nur durch einen bewusst geprüften Versions-Pin aktualisiert.

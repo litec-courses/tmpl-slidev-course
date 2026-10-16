@@ -1,4 +1,5 @@
 ---
+theme: slidev-theme-litec
 title: Kursübersicht
 author: Lehrperson
 layout: cover
