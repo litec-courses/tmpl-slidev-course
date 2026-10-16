@@ -28,7 +28,7 @@ bun install --frozen-lockfile
 bun run slides
 ```
 
-[Slidev-Anleitung](SLIDEV.md) · [Technische Details](details.md) · [Regeln für Coding-Agents](AGENTS.md)
+[Slidev-Anleitung](SLIDEV.md) · [Technische Details](details.md) · [Organization-Infrastruktur](infrastructure/README.md) · [Regeln für Coding-Agents](AGENTS.md)
 
 ## Struktur
 
@@ -37,6 +37,7 @@ bun run slides
 - `lectures/NN-thema-begleitblatt.md`: Aufgaben und Hilfen
 - `lectures/00-demo/`: Slidev-Demo
 - `exams/`: nicht veröffentlichte Prüfungsunterlagen und Lösungen
+- `infrastructure/`: manuelle Einrichtung der GitHub-Organization
 - `.slidev/`: Theme, Layouts, Branding und Fonts
 
 ## Als Template verwenden

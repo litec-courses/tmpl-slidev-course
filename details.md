@@ -42,22 +42,9 @@ Die Umstellung erfolgt nicht über die regulären Billing-Einstellungen der Orga
 
 Änderungen sollen auf einem kurzen Feature-Branch entstehen und über einen Pull Request nach `main` gelangen. Dadurch bleiben Änderungen, Build-Ergebnisse und Diskussionen nachvollziehbar.
 
-Empfohlene Regeln für `main`:
+Repository-Einstellungen werden durch ein Template nicht an neue Repositories weitergegeben. Deshalb steuert die Organization Custom Property `protection_profile` den Schutz des Default Branch. Die Profile `off`, `pull_request` und `reviewed` decken ungeschützte Repositories, allein betreute Projekte und Projekte mit verpflichtender Fremdfreigabe ab. Von Classroom50 verwaltete Organizations können `off` als Default verwenden und ausgewählte Assignments für Pull-Request-Übungen auf `pull_request` umstellen.
 
-- Pull Request vor dem Merge verlangen
-- offene Diskussionen vor dem Merge auflösen
-- Force Pushes und das Löschen von `main` blockieren
-- lineare Historie verwenden, wenn ausschließlich Squash- oder Rebase-Merges eingesetzt werden
-- bei Einzelbetreuung keine verpflichtende Fremdfreigabe verlangen; bei gemeinsamer Betreuung mindestens eine Freigabe verlangen
-- nach Erweiterung des Workflows den Pages-Build als erforderlichen Status Check festlegen
-
-Ein GitHub-Ruleset kann diese Regeln durchsetzen. Repository-Einstellungen werden durch ein Template nicht an neue Repositories weitergegeben. Für mehrere ausgewählte Kursrepositories eignet sich daher ein Organization Ruleset mit einer Custom Property, beispielsweise:
-
-```text
-repository_type = lecture
-```
-
-Das Ruleset kann mit `props.repository_type:lecture` gezielt nur diese Repositories erfassen. Einrichtung und Werteverwaltung sind unter [Managing custom properties](https://docs.github.com/en/organizations/managing-organization-settings/managing-custom-properties-for-repositories-in-your-organization) beschrieben.
+Die vollständige Einrichtung, empfohlene Regeln, Testschritte und der Ausnahmeprozess stehen in [GitHub-Organization verwalten](infrastructure/README.md).
 
 Der aktuelle Pages-Workflow läuft noch nicht für Pull Requests. Ein Pages-Build darf deshalb erst nach der geplanten Workflow-Erweiterung als verpflichtender PR-Check eingetragen werden. Das eigentliche Deployment soll weiterhin ausschließlich aus `main` erfolgen.
 
@@ -65,8 +52,8 @@ Der aktuelle Pages-Workflow läuft noch nicht für Pull Requests. Ein Pages-Buil
 
 - [ ] Prüfen, ob Theme, Layouts und Publish-Scripts langfristig als versioniertes `litec-slidev`-Package bereitgestellt werden sollen.
 - [ ] Festlegen, wie bestehende Kursrepositories einmalig mit `dependabot.yml` und späteren Infrastrukturänderungen versorgt werden.
-- [ ] GitHub-Organization-Custom-Property `repository_type` mit dem Wert `lecture` definieren und den betroffenen Repositories zuweisen.
-- [ ] Organization Ruleset für `props.repository_type:lecture` entwerfen, testen und dokumentieren.
+- [ ] GitHub-Organization-Custom-Property `protection_profile` gemäß Infrastruktur-Anleitung anlegen und zuweisen.
+- [ ] Organization Rulesets `pull-request-protection` und `required-review` im Evaluate-Modus testen und anschließend aktivieren.
 - [ ] Pages-Workflow um einen Pull-Request-Trigger erweitern.
 - [ ] Bei Pull Requests nur Build und Prüfung ausführen; Upload und Deployment weiterhin auf `main` beschränken.
 - [ ] Den erfolgreichen Build-Job anschließend als erforderlichen Status Check für `main` konfigurieren.
