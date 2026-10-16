@@ -18,9 +18,19 @@ GitHub unterstützt den textbasierten `bun.lock`. Siehe [unterstützte Ökosyste
 
 ## GitHub Pages
 
-`.github/workflows/pages.yml` läuft manuell oder bei Pushes auf `main`. Er installiert Bun und Chromium. Dann baut er die Freigaben aus `lectures/publish.yml`. Er veröffentlicht Decks, PDFs und Markdown-Dateien aus `dist/`.
+`.github/workflows/pages.yml` läuft bei Pull Requests, bei Pushes auf `main` und manuell. Er installiert Bun und Chromium. Dann baut er die Freigaben aus `lectures/publish.yml`.
 
-Einstellung: **Settings → Pages → Build and deployment → GitHub Actions**. Jekyll wird nicht verwendet. Siehe [GitHub Pages mit eigenem Workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+Pull Requests bauen und prüfen nur. Pushes auf `main` und manuelle Läufe auf `main` veröffentlichen Decks, PDFs und Markdown-Dateien aus `dist/`.
+
+Repository: **Settings → Pages → Build and deployment → GitHub Actions**. Jekyll wird nicht verwendet. Siehe [GitHub Pages mit eigenem Workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+Workflow mit Docker prüfen:
+
+```bash
+docker run --rm -v "$PWD:/repo:ro" -w /repo rhysd/actionlint:latest -color .github/workflows/pages.yml
+```
+
+Der Befehl braucht Docker. Keine Ausgabe bedeutet: `actionlint` hat keine Probleme gefunden.
 
 > [!WARNING]
 > Speaker Notes und Builds sind öffentlich. Prüfungen, Lösungen und `_temp/` nie in `lectures/slides.md` oder `lectures/publish.yml` aufnehmen.
@@ -43,11 +53,11 @@ Die Custom Property `protection_profile` schützt den Default Branch:
 
 - `off`: kein Organization Ruleset
 - `pull_request`: Pull Request ohne fremde Approval
-- `reviewed`: Pull Request mit fremder Approval
+- `review_required`: Pull Request mit fremder Approval
 
 Einrichtung und Tests: [GitHub-Organization verwalten](infrastructure.md).
 
-Der Pages-Workflow läuft noch nicht bei Pull Requests. Sein Build darf daher noch kein erforderlicher Check sein. Deployments bleiben auf `main` beschränkt.
+Der Pages-Build kann als erforderlicher Pull-Request-Check dienen. Deployments bleiben auf `main` beschränkt.
 
 ## TODO
 

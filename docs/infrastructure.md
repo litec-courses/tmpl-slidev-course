@@ -10,43 +10,43 @@ Ein **Ruleset** bündelt Schutzregeln für Repositories. Die **Custom Property**
 | --- | --- |
 | `off` | kein Organization Ruleset |
 | `pull_request` | Pull Request ohne fremde Approval |
-| `reviewed` | Pull Request mit einer Approval |
+| `review_required` | Pull Request mit einer Approval |
 
 > `off` entfernt keine anderen Schutzregeln. GitHub kombiniert passende Regeln.
 
-Voraussetzungen: GitHub Team oder Enterprise, passende Owner-Rechte und ein Default Branch.
+Voraussetzungen: GitHub Team (Education) oder Enterprise, passende Owner-Rechte und ein Default Branch.
 
 ## 1. Custom Property
 
-Pfad: **Settings → Repository → Custom properties**
+Organization: **Settings → Custom properties**
 
 1. `protection_profile` als **Single select** anlegen.
-2. `off`, `pull_request` und `reviewed` eintragen.
+2. `off`, `pull_request` und `review_required` eintragen.
 3. **Require this property for all repositories** aktivieren.
-4. Defaultwert wählen.
+4. Für die Einrichtung zunächst `off` als Default wählen.
 5. **Require explicit user-specified values** deaktiviert lassen.
 6. **Allow repository actors to set this property** deaktiviert lassen.
 
 Ohne eigenen Wert gilt der Default. So kann Classroom50 Repositories anlegen.
 
-| Verwendung | Profil |
+| Verwendung | Zielprofil |
 | --- | --- |
-| `litec-courses` | `pull_request` als Default |
+| `litec-courses` | `pull_request` als späterer Default |
 | Classroom50-Organization | `off` als Default |
 | Pull-Request-Übung | `pull_request` |
-| gemeinsam betreute Infrastruktur | `reviewed` |
+| gemeinsam betreute Infrastruktur | `review_required` |
 | Sandbox | `off` |
 
-Bestehende Repositories unter **Set values** zuordnen. `reviewed` braucht eine zweite Person.
+Bestehende Repositories unter **Set values** zuordnen. `review_required` braucht eine zweite Person.
 
 ## 2. Pull-Request-Schutz
 
-Pfad: **Settings → Repository → Rulesets → New ruleset → New branch ruleset**
+Organization: **Settings → Repository → Rulesets → New ruleset → New branch ruleset**
 
 1. Name: `pull-request-protection`.
-2. Status: **Evaluate**.
+2. Status: **Active**.
 3. Ziel: **Repositories matching a filter**.
-4. Profile: `pull_request` und `reviewed`.
+4. Filter: `-props.protection_profile:off`.
 5. Branch: **Default branch**.
 6. Vorschau prüfen.
 
@@ -55,60 +55,55 @@ Aktivieren:
 - **Restrict deletions**
 - **Require a pull request before merging** mit `0` Approvals
 - **Require conversation resolution before merging**
+- **Require linear history**
 - **Block force pushes**
 
 Keine breite Admin-Bypass-Regel setzen. Notfallzugang auf ein kleines Owner-Team begrenzen. Nutzung dokumentieren.
 
-**Require linear history** braucht Squash Merge oder Rebase Merge. Noch keine Status Checks fordern. Der Pages-Workflow läuft nicht bei Pull Requests.
+> [!IMPORTANT]
+> **Require linear history** braucht **Allow squash merging** oder **Allow rebase merging**. Repository: **Settings → General**, Abschnitt **Pull Requests**. Empfohlen ist Squash Merge.
+
+Nach dem ersten erfolgreichen Pull Request **Require status checks to pass before merging** aktivieren. Den Check `build` auswählen.
 
 ## 3. Approval-Pflicht
 
 Zweites Branch Ruleset anlegen:
 
 1. Name: `required-review`.
-2. Status: **Evaluate**.
-3. Filter: `props.protection_profile:reviewed`.
+2. Status: **Active**.
+3. Filter: `props.protection_profile:review_required`.
 4. Branch: **Default branch**.
 5. Pull Request und eine Approval verlangen.
 
-Für `reviewed` gelten beide Rulesets.
+Für `review_required` gelten beide Rulesets.
 
 ## 4. Test und Aktivierung
 
-Je ein Testrepository mit `off`, `pull_request` und `reviewed` verwenden.
+> [!IMPORTANT]
+> GitHub Team bietet keinen Evaluate-Modus. Deshalb bleibt der Default während der Einrichtung auf `off`. Zuerst wird nur ein Testrepository geschützt.
+
+Einem Testrepository nacheinander `pull_request` und `review_required` zuweisen.
 
 - `pull_request`: Push, Force Push, Löschen und offene Conversation prüfen.
 - `pull_request`: Merge ohne Approval muss möglich sein.
-- `reviewed`: fremde Approval muss nötig sein.
+- `review_required`: fremde Approval muss nötig sein.
 - `off`: Organization Rulesets dürfen unter `/<organization>/<repository>/rules` nicht erscheinen.
 - Classroom50: neues Repository muss `off` erben.
-- **Rule insights**: erwartete Ereignisse prüfen.
 
-Danach beide Rulesets auf **Active** setzen. Alle Profile erneut prüfen. Die Regeln gelten sofort.
+Danach echte Repositories zuordnen. Für `litec-courses` kann nun `pull_request` zum Default werden. Alle Profile erneut prüfen. Änderungen gelten sofort.
 
 ## Profil ändern
 
-Pfad: **Settings → Repository → Custom properties → Set values**
+Organization: **Settings → Custom properties → Set values**
 
-Vor einer Lockerung Grund, Person, Dauer und Rückstellung dokumentieren. Regeln unter `https://github.com/ORGANIZATION/REPOSITORY/rules` prüfen.
+Vor einer Lockerung Grund, Person, Dauer und Rückstellung dokumentieren. Repository: Regeln unter `https://github.com/ORGANIZATION/REPOSITORY/rules` prüfen.
 
 Für einzelne Repositories das Profil ändern. Ein Ruleset nur für eine gemeinsame Pause deaktivieren.
-
-## Build-Check ergänzen
-
-Erst nach Unterstützung von Pull Requests:
-
-1. Build bei `pull_request` ausführen.
-2. Deployment auf den Default Branch beschränken.
-3. Check-Namen aus einem erfolgreichen Pull Request übernehmen.
-4. **Require status checks to pass before merging** aktivieren.
-5. Zuerst im Evaluate-Modus testen.
 
 ## Kontrolle
 
 - `off` jedes Semester prüfen.
 - Classroom50-Defaults stichprobenartig prüfen.
-- Bypass-Nutzung in **Rule insights** prüfen.
 - Änderungen mit Grund und Datum dokumentieren.
 - Optional Ruleset-JSON ohne IDs oder interne Details versionieren.
 
