@@ -7,7 +7,7 @@
       "devDependencies": {
         "@slidev/cli": "53.0.0",
         "playwright-chromium": "1.64.1",
-        "slidev-theme-litec": "github:litec-courses/course-tooling#v0.5.0",
+        "slidev-theme-litec": "github:litec-courses/course-tooling#v0.6.0",
       },
     },
   },
@@ -1142,7 +1142,7 @@
 
     "sisteransi": ["sisteransi@1.0.5", "", {}, "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg=="],
 
-    "slidev-theme-litec": ["slidev-theme-litec@github:litec-courses/course-tooling#7b2464d", { "dependencies": { "@slidev/theme-default": "0.25.0", "yaml": "2.9.1" }, "bin": { "litec-course-publish": "./scripts/publish.mjs" } }, "litec-courses-course-tooling-7b2464d", "sha512-Xd6oi4KuiAVCnbbnD0RXteeh3iKaFQIlAjgEfm+RNiGZrLwkDOHDVacDNtKy5XjiiQ094T1OSA9ZIS9BVveDaQ=="],
+    "slidev-theme-litec": ["slidev-theme-litec@github:litec-courses/course-tooling#d2e0e7c", { "dependencies": { "@slidev/theme-default": "0.25.0", "yaml": "2.9.1" }, "bin": { "litec-course-publish": "./scripts/publish.mjs" } }, "litec-courses-course-tooling-d2e0e7c", "sha512-6zbz1RLHYGjOQyT5zTtxTBkCqzjBG1ssmf8NR5LrTsKn1DQbsiIQKaVQHUbJFJffE0TMPxuE7rixohXHPH2Osg=="],
 
     "source-map-js": ["source-map-js@1.2.1", "", {}, "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA=="],
 
