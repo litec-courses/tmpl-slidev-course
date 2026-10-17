@@ -1,12 +1,12 @@
 # Prüfungen
 
-Dieser Ordner enthält neutrale Vorlagen für Prüfungsangaben und zugehörige Lösungs- und Beurteilungsunterlagen:
+Der Unterordner `tmpl/` enthält neutrale Vorlagen für Prüfungsangaben und zugehörige Lösungs- und Beurteilungsunterlagen:
 
-- [`tmpl-exam.md`](tmpl-exam.md): vier Druckseiten mit Bewertungsübersicht
-- [`tmpl-exam-short.md`](tmpl-exam-short.md): platzsparende Variante mit horizontaler Punktevergabe
-- [`tmpl-solution.md`](tmpl-solution.md): paralleler Aufbau für Musterlösung und Korrekturschema
+- [`tmpl-exam.md`](tmpl/tmpl-exam.md): vier Druckseiten mit Bewertungsübersicht
+- [`tmpl-exam-short.md`](tmpl/tmpl-exam-short.md): platzsparende Variante mit horizontaler Punktevergabe
+- [`tmpl-solution.md`](tmpl/tmpl-solution.md): paralleler Aufbau für Musterlösung und Korrekturschema
 
-Vor der Verwendung beide Dateien in das private Kursrepository kopieren und fachlich anpassen.
+Vor der Verwendung die benötigten Dateien kopieren und fachlich anpassen.
 
 Die drei HTML-Seitenumbrüche erzeugen vier Druckseiten. Vor dem Druck die Vorschau auf genau vier A4-Seiten prüfen und anschließend die Booklet-/Broschürenfunktion des Druckers für ein beidseitiges A3-Blatt verwenden.
 

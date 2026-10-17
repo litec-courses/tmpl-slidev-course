@@ -20,3 +20,8 @@ sections:
         title: Beispieleinheit
         slides: lectures/01-beispiel-slides.md
         handout: lectures/01-beispiel-begleitblatt.md
+      - slug: beispielmaterial
+        title: Zusätzliches Beispielmaterial
+        resources:
+          - title: Beispielmaterial als PDF
+            file: lectures/00-demo/assets/beispielmaterial.pdf
