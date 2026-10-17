@@ -70,7 +70,7 @@ bun run pages:preview
 
 Im Kursrepository unter **Settings → Pages → Build and deployment** als Quelle **GitHub Actions** auswählen. Lösungen, Prüfungen und `_temp/` nicht in `lectures/publish.yml` aufnehmen.
 
-Theme, Publisher und wiederverwendbarer Pages-Workflow sind unveränderlich auf [`course-tooling@v0.5.0`](https://github.com/litec-courses/course-tooling/tree/v0.5.0) gepinnt.
+Theme, Publisher und wiederverwendbarer Pages-Workflow sind unveränderlich auf [`course-tooling@v0.6.0`](https://github.com/litec-courses/course-tooling/tree/v0.6.0) gepinnt.
 
 ## Lizenz
 
