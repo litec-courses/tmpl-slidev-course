@@ -18,7 +18,7 @@ GitHub unterstützt den textbasierten `bun.lock`. Siehe [unterstützte Ökosyste
 
 ## GitHub Pages
 
-`.github/workflows/pages.yml` ruft den fest auf `v0.1.0` gepinnten Workflow aus [`course-tooling`](https://github.com/litec-courses/course-tooling) auf. Er läuft bei Pull Requests, bei Pushes auf `main` und manuell, installiert Bun und Chromium und baut die Freigaben aus `lectures/publish.yml`.
+`.github/workflows/pages.yml` ruft den fest auf `v0.2.0` gepinnten Workflow aus [`course-tooling`](https://github.com/litec-courses/course-tooling) auf. Er läuft bei Pull Requests, bei Pushes auf `main` und manuell, installiert Bun und Chromium und baut die Freigaben aus `lectures/publish.yml`.
 
 Pull Requests bauen und prüfen nur. Pushes auf `main` und manuelle Läufe auf `main` veröffentlichen Decks, Folien-PDFs und Begleitblätter als Markdown aus `dist/`.
 

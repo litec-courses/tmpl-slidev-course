@@ -13,8 +13,10 @@ labels:
   units: Unterrichtseinheiten
   footer: Erzeugt aus den freigegebenen Dateien in lectures/publish.yml.
 
-units:
-  - slug: 01-beispiel
-    title: Beispieleinheit
-    slides: lectures/01-beispiel-slides.md
-    handout: lectures/01-beispiel-begleitblatt.md
+sections:
+  - title: Beispiel
+    units:
+      - slug: 01-beispiel
+        title: Beispieleinheit
+        slides: lectures/01-beispiel-slides.md
+        handout: lectures/01-beispiel-begleitblatt.md
