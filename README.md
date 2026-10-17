@@ -36,7 +36,7 @@ bun run slides
 - `lectures/NN-thema-slides.md`: Folien einer Einheit
 - `lectures/NN-thema-begleitblatt.md`: Aufgaben und Hilfen
 - `lectures/00-demo/`: Slidev-Demo
-- `exams/`: nicht veröffentlichte Prüfungsunterlagen und Lösungen
+- `exams/`: nicht veröffentlichte Prüfungsunterlagen und Lösungen; neutrale Vorlagen liegen unter `exams/tmpl/`
 - `docs/`: Anleitungen zu Slidev, technischen Details und der GitHub-Organization
 - `package.json`: fest gepinnte Version des gemeinsamen Themes und Publishers
 
@@ -49,7 +49,19 @@ bun run slides
 
 ## Veröffentlichung mit GitHub Pages
 
-Die in `lectures/publish.yml` ausdrücklich freigegebenen Folien und Begleitblätter werden bei einem Push auf `main` veröffentlicht. Die erzeugte Kursseite enthält interaktive Folien, PDF-Downloads der Folien sowie Begleitblätter als Markdown.
+Die in `lectures/publish.yml` ausdrücklich freigegebenen Folien, Begleitblätter und zusätzlichen Ressourcen werden bei einem Push auf `main` veröffentlicht. Die erzeugte Kursseite enthält interaktive Folien, PDF-Downloads der Folien, Begleitblätter als Markdown und verlinkte Ressourcendateien.
+
+Zusätzliche Dateien wie PDFs werden innerhalb einer Unit unter `resources` eingetragen:
+
+```yaml
+- slug: beispielmaterial
+  title: Zusätzliches Beispielmaterial
+  resources:
+    - title: Beispielmaterial als PDF
+      file: lectures/00-demo/assets/beispielmaterial.pdf
+```
+
+Nur ausdrücklich eingetragene Ressourcen werden veröffentlicht.
 
 ```bash
 bun run pages:build
