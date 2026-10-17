@@ -1,15 +1,11 @@
 course:
   title: Fach · Thema
   description: Unterrichtsfolien und Begleitblätter
-  slides: lectures/slides.md
 
 labels:
-  course: Gesamter Kurs
-  openCourseSlides: Kursfolien öffnen
-  downloadCourseSlides: Kursfolien als PDF
   openSlides: Folien öffnen
-  downloadSlides: Folien als PDF
-  downloadHandoutMarkdown: Begleitblatt als Markdown
+  downloadSlides: Folien (pdf)
+  downloadHandoutMarkdown: Begleitblatt (md)
   units: Unterrichtseinheiten
   footer: Erzeugt aus den freigegebenen Dateien in lectures/publish.yml.
 
@@ -23,5 +19,5 @@ sections:
       - slug: beispielmaterial
         title: Zusätzliches Beispielmaterial
         resources:
-          - title: Beispielmaterial als PDF
+          - title: Beispielmaterial (pdf)
             file: lectures/00-demo/assets/beispielmaterial.pdf
