@@ -14,4 +14,4 @@ permissions:
 
 jobs:
   ci:
-    uses: litec-courses/course-tooling/.github/workflows/publish-pages.yml@v0.6.0
+    uses: litec-courses/course-tooling/.github/workflows/publish-pages.yml@v0.7.0
