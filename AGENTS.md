@@ -19,6 +19,9 @@ Each unit contains:
 - guidance and an extension task
 
 Slides contain concepts, questions, diagrams, and short examples. Handouts contain the assignment, required starter code, success criteria, a help card, an extension task, and sources. Avoid unnecessary duplication.
+When a handout exists, the corresponding practice slide explicitly directs learners to its assignment.
+When downloadable exercise files exist, the corresponding practice slide and handout direct learners to the ZIP on the course page instead of a private repository path.
+End each teaching deck with an `Exit Ticket` before the sources.
 
 ## Files
 
