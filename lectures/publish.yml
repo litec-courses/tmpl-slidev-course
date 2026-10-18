@@ -21,3 +21,5 @@ sections:
         resources:
           - title: Beispielmaterial (pdf)
             file: lectures/00-demo/assets/beispielmaterial.pdf
+          - title: Starterprojekt (zip)
+            directory: examples/starter-project

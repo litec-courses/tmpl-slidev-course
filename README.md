@@ -51,7 +51,7 @@ bun run slides
 
 Die in `lectures/publish.yml` ausdrücklich freigegebenen Folien, Begleitblätter und zusätzlichen Ressourcen werden bei einem Push auf `main` veröffentlicht. Die erzeugte Kursseite enthält interaktive Folien, PDF-Downloads der Folien, Begleitblätter als Markdown und verlinkte Ressourcendateien.
 
-Zusätzliche Dateien wie PDFs werden innerhalb einer Unit unter `resources` eingetragen:
+Zusätzliche Dateien wie PDFs und Git-getrackte Verzeichnisse werden innerhalb einer Unit unter `resources` eingetragen. Verzeichnisse stellt der Publisher automatisch als ZIP-Datei bereit:
 
 ```yaml
 - slug: beispielmaterial
@@ -59,6 +59,8 @@ Zusätzliche Dateien wie PDFs werden innerhalb einer Unit unter `resources` eing
   resources:
     - title: Beispielmaterial als PDF
       file: lectures/00-demo/assets/beispielmaterial.pdf
+    - title: Starterprojekt als ZIP
+      directory: examples/starter-project
 ```
 
 Nur ausdrücklich eingetragene Ressourcen werden veröffentlicht.
@@ -70,7 +72,7 @@ bun run pages:preview
 
 Im Kursrepository unter **Settings → Pages → Build and deployment** als Quelle **GitHub Actions** auswählen. Lösungen, Prüfungen und `_temp/` nicht in `lectures/publish.yml` aufnehmen.
 
-Theme, Publisher und wiederverwendbarer Pages-Workflow sind unveränderlich auf [`course-tooling@v0.6.0`](https://github.com/litec-courses/course-tooling/tree/v0.6.0) gepinnt.
+Theme, Publisher und wiederverwendbarer Pages-Workflow sind unveränderlich auf [`course-tooling@v0.7.0`](https://github.com/litec-courses/course-tooling/tree/v0.7.0) gepinnt.
 
 ## Lizenz
 
