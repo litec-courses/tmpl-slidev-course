@@ -1,6 +1,11 @@
 course:
   title: Fach · Thema
   description: Unterrichtsfolien und Begleitblätter
+  copyright:
+    holders:
+      - Vorname Nachname
+    year: 2026
+    notice: Alle Rechte vorbehalten.
 
 labels:
   openSlides: Folien öffnen

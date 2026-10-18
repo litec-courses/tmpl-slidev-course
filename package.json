@@ -16,6 +16,6 @@
   "devDependencies": {
     "@slidev/cli": "53.0.0",
     "playwright-chromium": "1.64.1",
-    "slidev-theme-litec": "github:litec-courses/course-tooling#v0.7.0"
+    "slidev-theme-litec": "github:litec-courses/course-tooling#v0.8.0"
   }
 }
